@@ -169,9 +169,26 @@
       background: transparent;   /* 👈 شيل التظليل الفردي */
       padding: 6px 0;
     }
+    
     #contact {
       text-align: center;
+    }
+    .contact-box {
+      background: #0f172a;        /* كحلي فاتح */
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 420px;
+      margin: 0 auto;             /* 👈 توسيط */
+    }
+
+    .contact-box p {
+      margin: 10px 0;
       font-size: 1rem;
+    }
+
+    .contact-box span {
+      color: #4da3ff;             /* لبني هادي */
+      font-weight: 500;
     }
     
   </style>
@@ -341,8 +358,10 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: mr.ehapp@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/ehab-ayman-anwar</p>
+  <div class="contact-box">
+    <p>Email: mr.ehapp@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/ehab-ayman-anwar</p>
+  </div>
 </section>
 
 <footer>
