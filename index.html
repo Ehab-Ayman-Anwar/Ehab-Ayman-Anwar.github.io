@@ -175,14 +175,18 @@
     }
     .contact-box {
       background: #0f172a;        /* كحلي فاتح */
-      padding: 20px;
-      border-radius: 10px;
+      padding: 22px;
+      border-radius: 12px;
       max-width: 420px;
       margin: 0 auto;             /* 👈 توسيط */
     }
 
     .contact-box p {
-      margin: 10px 0;
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
       font-size: 1rem;
     }
 
@@ -191,7 +195,18 @@
       font-weight: 500;
     }
     
+    }
+
+    .contact-box .icon {
+      font-size: 1.2rem;
+    }
+
+    .contact-box .text {
+      color: #4da3ff;
+      font-weight: 500;
+    }
   </style>
+  
 </head>
 <body>
 <nav class="navbar">
@@ -359,9 +374,17 @@
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-box">
-    <p>Phone: +20 01221705577 </p>
-    <p>Email: mr.ehapp@gmail.com</p>
-    <p>LinkedIn: linkedin.com/in/ehab-ayman-anwar</p>
+    <p>
+      <span class="icon">📞</span>
+      <span class="text">+20 01221795577</span> 
+    </p>
+      <span class="icon">✉️</span>
+      <span class="text">mr.ehapp@gmail.com</span>
+    </p>
+    <p>
+      <span class="icon">🔗</span>
+      <span class="text">linkedin.com/in/ehab-ayman-anwar</span>
+    </p>
   </div>
 </section>
 
