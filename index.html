@@ -543,6 +543,66 @@
       margin-bottom: 15px;
     }
 
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .cert-card {
+      background: rgba(0,255,150,0.05);
+      border: 1px solid #38bdf8;
+      padding: 25px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0,255,150,0.4);
+    }
+    
+    .cert-card h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+    
+    .cert-card span {
+      color: #38bdf8;
+      font-size: 14px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+    }
+    
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #38bdf8;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
   </style>
   
 </head>
@@ -707,42 +767,49 @@
 </section>
   
 <section id="certifications">
-  <h2>Certifications & Training</h2>
-  <div class="box">
-    <ul>
-      <li>
-        <strong>Digital Egypt Pioneers Initiative (DEPI) trainee for 6 months</strong><br>
-        Infrastructure & Security – Digital Forensics Investigator
-      </li>
+  <h2>Certifications</h2>
 
-      <li>
-        <strong>National Telecommunication Institute (NTI) trainee for 2 months</strong><br>
-        Network Security Training
-      </li>
+  <div class="cert-grid">
 
-      <li>
-        <strong>CEHv13 – EC-Council</strong><br>
-        Certified Ethical Hacker
-      </li>
+    <div class="cert-card" onclick="openModal('ceh.jpg')">
+      <h3>CEH v13</h3>
+      <p>EC-Council</p>
+      <span>Oct 2025</span>
+    </div>
 
-      <li>
-        <strong>CCNA – Cisco Networking Academy trainee for 3 months</strong><br>
-        Networking Fundamentals & Security
-      </li>
+    <div class="cert-card" onclick="openModal('ccna2.jpg''ccna3.jpg')">
+      <h3>CCNA</h3>
+      <p>Cisco Networking Academy</p>
+      <span>Feb 2025 – Jul 2025</span>
+    </div>
 
-      <li>
-        <strong>Cybersecurity Essentials</strong><br>
-        Cisco Networking Academy
-      </li>
+    <div class="cert-card" onclick="openModal('cyberops.jpg')">
+      <h3>CyberOps Associate</h3>
+      <p>Cisco</p>
+      <span>Nov 2025</span>
+    </div>
 
-      <li>
-        <strong>Cybersecurity Job Simulations</strong><br>
-        Mastercard & Telstra
-      </li>
-    </ul>
-</div>
+    <div class="cert-card" onclick="openModal('ctiga.jpg')">
+      <h3>CTIGA</h3>
+      <p>Red Team Leaders</p>
+      <span>Feb 2026</span>
+    </div>
+
+    <div class="cert-card" onclick="openModal('msc.jpg''job-sim.jpg')">
+      <h3>Cybersecurity Job Simulation</h3>
+      <p>Mastercard & Telstra</p>
+      <span>Jun–Jul 2025</span>
+    </div>
+
+    <div class="cert-card" onclick="openModal('hardware.jpg')">
+      <h3>Computer hardware</h3>
+      <p>Computer hardware</p>
+      <span>Feb 2024</span>
+    </div>
+
+  </div>
 </section>
-
+  
 <section id="languages">
   <h2>Languages</h2>
 
@@ -849,6 +916,17 @@
 <footer>
   © 2026 Ehab Ayman — Cybersecurity Portfolio
 </footer>
+
+<script>
+function openModal(imageSrc) {
+  document.getElementById("certModal").style.display = "block";
+  document.getElementById("modalImage").src = imageSrc;
+}
+
+function closeModal() {
+  document.getElementById("certModal").style.display = "none";
+}
+</script>
   
 <script>
   const form = document.getElementById('contactForm');
@@ -885,7 +963,12 @@ function copyText(elementId) {
     toast.classList.remove("show");
   }, 2500);
 }
-</script>  
+</script> 
+
+<div id="certModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
   
 </body>
 </html>
