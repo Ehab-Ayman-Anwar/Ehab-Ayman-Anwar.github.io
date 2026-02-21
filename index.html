@@ -421,6 +421,34 @@
       color: #38bdf8;
     }
 
+    .copy-item {
+      cursor: pointer;
+    }
+
+    .copy-item:hover {
+      color: #38bdf8;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #38bdf8;
+      color: #000;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.4s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
   </style>
   
 </head>
@@ -608,14 +636,16 @@
     <!-- Left Side - Info -->
     <div class="contact-info">
 
-      <div class="contact-item copy-email" onclick="copyEmail()">
+      <!-- Email -->
+      <div class="contact-item copy-item" onclick="copyText('emailText')">
         <i class="fas fa-envelope"></i>
         <span id="emailText">mr.ehapp@gmail.com</span>
       </div>
 
-      <div class="contact-item">
+      <!-- Phone -->
+      <div class="contact-item copy-item" onclick="copyText('phoneText')">
         <i class="fas fa-phone"></i>
-        <span>+20 1221795577</span>
+        <span id="phoneText">+20 1221795577</span>
       </div>
 
       <a href="https://linkedin.com/in/ehab-ayman-anwar" 
@@ -626,6 +656,8 @@
       </a>
 
     </div>
+    <!-- Toast Message -->
+    <div id="toast" class="toast">Copied successfully ✅</div>
 
   <!-- Right Side - Form -->
   <div class="contact-form">
@@ -678,10 +710,16 @@
 </script>
   
 <script>
-function copyEmail() {
-  const email = document.getElementById("emailText").innerText;
-  navigator.clipboard.writeText(email);
-  alert("Email copied to clipboard ✅");
+function copyText(elementId) {
+  const text = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(text);
+
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
 }
 </script>  
   
