@@ -518,6 +518,31 @@
       }
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    
+    .skill-card {
+      background: rgba(0, 255, 150, 0.05);
+      border: 1px solid #00ff95;
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 150, 0.3);
+    }
+    
+    .skill-card h3 {
+      color: #00ff95;
+      margin-bottom: 15px;
+    }
+
   </style>
   
 </head>
@@ -588,16 +613,47 @@
 <section id="skills">
   <h2>Skills</h2>
 
-  <h3>Cybersecurity & Forensics</h3>
-  <div class="box">
-    <ul>
-      <li>Digital Forensics Investigation (Windows & Linux)</li>
-      <li>Incident Analysis & Evidence Handling</li>
-      <li>Network Traffic Analysis (TCP/IP, HTTP, DNS)</li>
-      <li>SOC Operations – Tier 1 Fundamentals</li>
-      <li>Basic Malware & Email Forensics</li>
-    </ul>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <h3>Networking</h3>
+      <p><strong>CCNA | Routing & Switching | TCP/IP | VLANs | Subnetting</strong></p>
+      <p>Strong foundation in enterprise networking including routing protocols,
+         IP addressing, and network security fundamentals.</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Security & SOC</h3>
+      <p><strong>CyberOps | Incident Response | Log Analysis | SOC Tier 1</strong></p>
+      <p>Hands-on SOC simulations including malware analysis and firewall rule creation.</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Ethical Hacking</h3>
+      <p><strong>CEH v13 | Vulnerability Assessment | Phishing Simulation</strong></p>
+      <p>Trained in offensive security techniques aligned with EC-Council standards.</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Threat Intelligence</h3>
+      <p><strong>CTIGA | Threat Analysis | Governance</strong></p>
+      <p>Knowledge in threat modeling and defensive security strategy.</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Tools</h3>
+      <p><strong>Wireshark | Nmap | Kali | Autopsy | Packet Tracer</strong></p>
+      <p>Used for packet inspection, scanning, and forensic investigations.</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>OS & Scripting</h3>
+      <p><strong>Linux | Windows | Python | Bash</strong></p>
+      <p>Basic scripting and system administration for security tasks.</p>
+    </div>
+
   </div>
+</section>
 
   <h3>Tools & Technologies</h3>
   <div class="box">
