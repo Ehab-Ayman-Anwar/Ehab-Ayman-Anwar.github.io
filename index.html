@@ -340,6 +340,13 @@
       background: #0ea5e9;
     }
 
+    .success-message {
+      margin-top: 15px;
+      color: #38bdf8;
+      font-weight: bold;
+      text-align: center;
+    }
+
   </style>
   
 </head>
@@ -524,22 +531,53 @@
   <h2>Contact</h2>
 
   <div class="contact-form">
-    <form action="https://formsubmit.co/mr.ehapp@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://ehab-ayman-anwar.github.io/#contact">
+    <form id="contactForm" action="https://formsubmit.co/ajax/mr.ehapp@gmail.com" method="POST">
+
       <input type="hidden" name="_captcha" value="false">
+
       <input type="text" name="name" placeholder="Your Name" required>
+
       <input type="email" name="email" placeholder="Your Email" required>
-      
+
       <textarea name="message" placeholder="Your Message" required></textarea>
+
       <button type="submit">Send Message</button>
 
     </form>
+
+    <p id="successMessage" class="success-message" style="display:none;">
+      ✅ Your message has been sent successfully!
+    </p>
+
   </div>
 </section>
 
 <footer>
   © 2026 Ehab Ayman — Cybersecurity Portfolio
 </footer>
+  
+<script>
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
 
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        successMessage.style.display = "block";
+      }
+    })
+    .catch(error => {
+      alert("Something went wrong. Please try again.");
+    });
+  });
+</script>
+  
 </body>
 </html>
