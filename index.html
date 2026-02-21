@@ -413,6 +413,14 @@
       transform: scale(1.2);
     }
 
+    .copy-email {
+      cursor: pointer;
+    }
+
+    .copy-email:hover {
+      color: #38bdf8;
+    }
+
   </style>
   
 </head>
@@ -600,15 +608,15 @@
     <!-- Left Side - Info -->
     <div class="contact-info">
 
-      <a href="mailto:mr.ehapp@gmail.com" class="contact-item">
+      <div class="contact-item copy-email" onclick="copyEmail()">
         <i class="fas fa-envelope"></i>
-        <span>mr.ehapp@gmail.com</span>
-      </a>
+        <span id="emailText">mr.ehapp@gmail.com</span>
+      </div>
 
-      <a href="tel:+201234567890" class="contact-item">
+      <div class="contact-item">
         <i class="fas fa-phone"></i>
         <span>+20 1221795577</span>
-      </a>
+      </div>
 
       <a href="https://linkedin.com/in/ehab-ayman-anwar" 
          target="_blank" 
@@ -668,6 +676,14 @@
     });
   });
 </script>
+  
+<script>
+function copyEmail() {
+  const email = document.getElementById("emailText").innerText;
+  navigator.clipboard.writeText(email);
+  alert("Email copied to clipboard ✅");
+}
+</script>  
   
 </body>
 </html>
