@@ -349,6 +349,34 @@
       text-align: center;
     }
 
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .contact-info {
+      min-width: 250px;
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .contact-info i {
+      color: #38bdf8;
+      margin-right: 10px;
+    }
+
+    .contact-form {
+      width: 350px;
+    }
+
   </style>
   
 </head>
@@ -531,7 +559,16 @@
 
 <section id="contact">
   <h2>Contact</h2>
+  <div class="contact-container">
 
+    <!-- Left Side - Info -->
+    <div class="contact-info">
+      <p><i class="fas fa-envelope"></i> mr.ehapp@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +20 1221795577</p>
+      <p><i class="fab fa-linkedin"></i> linkedin.com/in/ehab-ayman-anwar</p>
+    </div>
+
+  <!-- Right Side - Form -->
   <div class="contact-form">
     <form id="contactForm" action="https://formsubmit.co/ajax/mr.ehapp@gmail.com" method="POST">
 
