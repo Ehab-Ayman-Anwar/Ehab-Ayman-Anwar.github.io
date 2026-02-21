@@ -575,16 +575,16 @@
     }
 
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.9);
-    }
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: flex-start; /* 👈 بدل center */
+    padding-top: 100px; /* 👈 مساحة للـ navbar */
+    z-index: 999;
+  }
     
     .modal-content {
       margin: auto;
@@ -777,7 +777,7 @@
       <span>Oct 2025</span>
     </div>
 
-    <div class="cert-card" onclick="openModal('ccna2.jpg''ccna3.jpg')">
+    <div class="cert-card" onclick="openModal('ccna3.jpg')">
       <h3>CCNA</h3>
       <p>Cisco Networking Academy</p>
       <span>Feb 2025 – Jul 2025</span>
@@ -795,10 +795,16 @@
       <span>Feb 2026</span>
     </div>
 
-    <div class="cert-card" onclick="openModal('msc.jpg''job-sim.jpg')">
+    <div class="cert-card" onclick="openModal('job-sim.jpg')">
       <h3>Cybersecurity Job Simulation</h3>
-      <p>Mastercard & Telstra</p>
-      <span>Jun–Jul 2025</span>
+      <p>Telstra</p>
+      <span>Jul 2025</span>
+    </div>
+
+    <div class="cert-card" onclick="openModal('msc.jpg')">
+      <h3>Cybersecurity Job Simulation</h3>
+      <p>Mastercard</p>
+      <span>Jun 2025</span>
     </div>
 
     <div class="cert-card" onclick="openModal('hardware.jpg')">
@@ -918,14 +924,44 @@
 </footer>
 
 <script>
-function openModal(imageSrc) {
-  document.getElementById("certModal").style.display = "block";
-  document.getElementById("modalImage").src = imageSrc;
+const modal = document.getElementById("certModal");
+
+function openModal(img, title, pdf, verifyLink) {
+
+  modal.style.display = "flex";
+
+  document.getElementById("modalImage").src = img;
+  document.getElementById("modalTitle").innerText = title;
+
+  document.getElementById("downloadBtn").href = pdf;
+
+  const verifyBtn = document.getElementById("verifyBtn");
+
+  if (verifyLink !== "") {
+    verifyBtn.style.display = "inline-block";
+    verifyBtn.href = verifyLink;
+  } else {
+    verifyBtn.style.display = "none";
+  }
 }
 
 function closeModal() {
-  document.getElementById("certModal").style.display = "none";
+  modal.style.display = "none";
 }
+
+// 🔥 أهم جزء
+modal.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+// ESC
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
 </script>
   
 <script>
