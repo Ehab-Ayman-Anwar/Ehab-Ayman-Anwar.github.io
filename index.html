@@ -455,6 +455,59 @@
       border-radius: 50%;
     }
 
+    #languages {
+      padding: 60px 20px;
+    }
+    
+    .languages-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .language-card {
+      background: #111;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 25px;
+      border-radius: 12px;
+      width: 280px;
+      transition: 0.3s ease;
+    }
+    
+    .language-card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+    }
+    
+    .lang-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .lang-header i {
+      color: #38bdf8;
+      font-size: 18px;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #222;
+      border-radius: 5px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    
+    .progress {
+      height: 100%;
+      background: #38bdf8;
+      border-radius: 5px;
+    }
+
   </style>
   
 </head>
@@ -633,6 +686,50 @@
       </li>
     </ul>
 </div>
+</section>
+
+<section id="languages">
+  <h2>Languages</h2>
+
+  <div class="languages-container">
+
+    <!-- Arabic -->
+    <div class="language-card">
+      <div class="lang-header">
+        <i class="fas fa-globe"></i>
+        <h3>Arabic</h3>
+      </div>
+      <p>Native</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="language-card">
+      <div class="lang-header">
+        <i class="fas fa-globe"></i>
+        <h3>English</h3>
+      </div>
+      <p>B2 – Intermediate</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 75%;"></div>
+      </div>
+    </div>
+
+    <!-- German -->
+    <div class="language-card">
+      <div class="lang-header">
+        <i class="fas fa-globe"></i>
+        <h3>German</h3>
+      </div>
+      <p>A2 – Basic</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 40%;"></div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section id="contact">
