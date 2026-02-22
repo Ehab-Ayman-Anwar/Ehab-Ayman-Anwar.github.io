@@ -924,29 +924,14 @@
 </footer>
 
 <script>
-const modal = document.getElementById("certModal");
-const modalImg = document.getElementById("modalImage");
-
-function openModal(img) {
-  modal.style.display = "flex";
-  modalImg.src = img;
+function openModal(imageSrc) {
+  document.getElementById("certModal").style.display = "block";
+  document.getElementById("modalImage").src = imageSrc;
 }
 
 function closeModal() {
-  modal.style.display = "none";
+  document.getElementById("certModal").style.display = "none";
 }
-
-modal.addEventListener("click", function(e) {
-  if (e.target === modal) {
-    closeModal();
-  }
-});
-
-document.addEventListener("keydown", function(e) {
-  if (e.key === "Escape") {
-    closeModal();
-  }
-});
 // ESC
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") {
