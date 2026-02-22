@@ -593,6 +593,66 @@
       cursor: pointer;
     }
 
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .work-card {
+      background: rgba(0,255,150,0.05);
+      border: 1px solid #38bdf8;
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s ease;
+    }
+    
+    .work-card:hover {
+      box-shadow: 0 0 20px rgba(0,255,150,0.4);
+    }
+    
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .work-date {
+      background: rgba(0,255,150,0.15);
+      color: #00ff95;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    
+    .company {
+      margin: 10px 0 15px;
+      color: #9ca3af;
+    }
+    
+    .work-card ul li {
+      background: transparent;
+      margin: 6px 0;
+    }
+    
+    .cert-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      background: #38bdf8;
+      color: #000;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+    
+    .cert-btn:hover {
+      background: #0ea5e9;
+    }
+
   </style>
   
 </head>
@@ -755,6 +815,71 @@
     </ul>
   </div>
 </section>
+  
+<section id="work">
+  <h2>Work Experience</h2>
+
+  <div class="work-grid">
+
+    <!-- DEPI -->
+    <div class="work-card">
+      <div class="work-header">
+        <h3>Infrastructure & Security – Forensics Investigator</h3>
+        <span class="work-date">Nov 2025 – Present</span>
+      </div>
+      <p class="company">Digital Egypt Pioneers (DEPI) — Cairo</p>
+
+      <ul>
+        <li>Intensive training in Digital Forensics and Cybersecurity</li>
+        <li>Evidence handling, chain of custody, acquisition & analysis</li>
+        <li>Hands-on Windows, Linux, and Mac OS artifacts</li>
+        <li>Network, Web, Email & Malware forensics investigation</li>
+        <li>Used Wireshark, Kali Linux, Autopsy & virtual labs</li>
+      </ul>
+
+      <a href="depi.jpg" target="_blank" class="cert-btn">
+        View Certificate
+      </a>
+    </div>
+
+    <!-- NTI -->
+    <div class="work-card">
+      <div class="work-header">
+        <h3>Network Security Trainee</h3>
+        <span class="work-date">Aug 2025 – Sep 2025</span>
+      </div>
+      <p class="company">National Telecommunication Institute (NTI) — Cairo</p>
+
+      <ul>
+        <li>Firewalls, VPNs, IDS/IPS & penetration testing basics</li>
+        <li>Hands-on labs detecting & preventing attacks</li>
+        <li>Used Wireshark, Kali Linux & Cisco Packet Tracer</li>
+        <li>Secured simulated enterprise networks</li>
+      </ul>
+
+      <a href="nti.jpg" target="_blank" class="cert-btn">
+        View Certificate
+      </a>
+    </div>
+
+    <!-- IT Support -->
+    <div class="work-card">
+      <div class="work-header">
+        <h3>IT Technical Support</h3>
+        <span class="work-date">Jul 2024 – Sep 2024</span>
+      </div>
+      <p class="company">Oscar Company — Cairo</p>
+
+      <ul>
+        <li>Resolved hardware and software issues</li>
+        <li>Installed & configured operating systems</li>
+        <li>Maintained IT equipment</li>
+        <li>Assisted Network & Security team</li>
+      </ul>
+    </div>
+
+  </div>
+</section>  
   
 <section id="certifications">
   <h2>Certifications</h2>
