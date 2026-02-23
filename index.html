@@ -653,6 +653,66 @@
       background: #0ea5e9;
     }
 
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .project-card {
+      background: rgba(0,255,150,0.05);
+      border: 1px solid #38bdf8;
+      padding: 25px;
+      border-radius: 15px;
+      transition: 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(0,255,150,0.4);
+    }
+    
+    .project-card h3 {
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+    
+    .tags {
+      margin-top: 15px;
+    }
+    
+    .tags span {
+      display: inline-block;
+      background: rgba(0,255,0,0.15);
+      color: #00ff95;
+      padding: 6px 10px;
+      margin: 5px 5px 0 0;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+    
+    .project-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    
+    .project-links a {
+      background: transparent;
+      color: #38bdf8;
+      padding: 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .project-links a:hover {
+      color: #00ff95;
+    }
+
   </style>
   
 </head>
@@ -768,51 +828,74 @@
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Network Traffic Analysis & Incident Detection</h3>
-    <p>
-      Analyzed network traffic using Wireshark to identify suspicious
-      activities and potential security incidents. Focused on TCP/IP,
-      HTTP, and DNS traffic to detect anomalies and indicators of compromise.
-    </p>
-    <p><strong>Tools:</strong> Wireshark, TCP/IP, Kali Linux</p>
-    <p><strong>Key Outcomes:</strong></p>
-    <ul>
-      <li>Identified abnormal traffic patterns</li>
-      <li>Analyzed packet-level data for security insights</li>
-      <li>Documented findings in a structured incident report</li>
-    </ul>
-  </div>
+  <div class="projects-grid">
 
-  <div class="project">
-    <h3>Digital Forensics Investigation – DEPI Capstone</h3>
-    <p>
-      Conducted a simulated digital forensics investigation following
-      standard forensic methodologies, including evidence acquisition,
-      analysis, and reporting.
-    </p>
-    <p><strong>Tools:</strong> Autopsy, Linux, Windows Artifacts</p>
-    <p><strong>Key Outcomes:</strong></p>
-    <ul>
-      <li>Collected and preserved digital evidence</li>
-      <li>Analyzed file systems and user activity artifacts</li>
-      <li>Created a complete forensic investigation report</li>
-    </ul>
-  </div>
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3><i class="fas fa-folder-open"></i> Digital Forensics Capstone</h3>
+      <p>
+        Simulated a real-world digital forensics investigation covering
+        evidence acquisition, chain of custody, artifact analysis on
+        Windows/Linux/Mac, and full incident reporting.
+      </p>
 
-  <div class="project">
-    <h3>SOC Tier 1 Incident Analysis Simulation</h3>
-    <p>
-      Participated in SOC simulations focused on detecting, analyzing,
-      and responding to security incidents in a controlled environment.
-    </p>
-    <p><strong>Tools:</strong> Wireshark, Nmap, Linux</p>
-    <p><strong>Key Outcomes:</strong></p>
-    <ul>
-      <li>Performed initial incident triage</li>
-      <li>Analyzed logs and alerts for malicious activity</li>
-      <li>Escalated incidents following SOC procedures</li>
-    </ul>
+      <div class="tags">
+        <span>Autopsy</span>
+        <span>Wireshark</span>
+        <span>Kali Linux</span>
+        <span>Forensics</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN_POST" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3><i class="fas fa-folder-open"></i>Network Security Assessment Metasploitable project</h3>
+      <p>
+        Hands-on lab environment for identify exposed services, detect outdated software versions,
+        map known vulnerabilities (CVEs), and assess overall system risk.
+      </p>
+
+      <div class="tags">
+        <span>Nmap</span>
+        <span>Searchsploit</span>
+        <span>Metasploitable2</span>
+        <span>Kali Linux</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/Ehab-Ayman-Anwar/Advanced-Network-Security-Assessment-project">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3><i class="fas fa-folder-open"></i> Phishing Simulation Campaign</h3>
+      <p>
+        Designed and executed phishing email simulations including
+        malware response and incident postmortem analysis.
+      </p>
+
+      <div class="tags">
+        <span>Social Engineering</span>
+        <span>Incident Response</span>
+        <span>Email Security</span>
+      </div>
+
+      <div class="project-links">
+        <a href="https://linkedin.com/in/YOUR_LINKEDIN_POST" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
   
