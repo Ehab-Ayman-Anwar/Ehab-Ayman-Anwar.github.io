@@ -718,44 +718,48 @@
       text-align:center;
     }
     
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:30px;
-      margin-top:40px;
-    }
-    
-    .stat-card{
+    .stats-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
       background:rgba(56,189,248,0.05);
-      border:1px solid rgba(56,189,248,0.4);
-      padding:35px 20px;
+      border:1px solid #38bdf8;
       border-radius:15px;
-      transition:0.3s ease;
-      backdrop-filter:blur(6px);
+      padding:40px 20px;
+      margin-top:40px;
+      flex-wrap:wrap;
     }
     
-    .stat-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 0 25px rgba(56,189,248,0.4);
-      border-color:#38bdf8;
+    .stat-item{
+      flex:1;
+      text-align:center;
     }
     
-    .stat-card i{
-      font-size:32px;
+    .stat-item i{
       color:#38bdf8;
-      margin-bottom:15px;
+      font-size:26px;
+      margin-bottom:10px;
     }
     
-    .stat-card h3{
-      font-size:42px;
+    .stat-item h3{
+      color:#38bdf8;
+      font-size:38px;
       margin:10px 0;
-      color:#38bdf8;
     }
     
-    .stat-card p{
-      font-size:13px;
+    .stat-item p{
+      font-size:12px;
       letter-spacing:2px;
       color:#9ca3af;
+    }
+    
+    @media (max-width:768px){
+    
+      .stats-container{
+        flex-direction:column;
+        gap:30px;
+      }
+    
     }
     
   </style>
@@ -781,31 +785,29 @@
 
 <section id="stats">
 
-  <h2>Achievements</h2>
+  <div class="stats-container">
 
-  <div class="stats-grid">
-
-    <div class="stat-card">
+    <div class="stat-item">
       <i class="fa-solid fa-certificate"></i>
-      <h3 class="counter" data-target="10">0</h3>
+      <h3>10+</h3>
       <p>Certifications</p>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-item">
       <i class="fa-solid fa-clock"></i>
-      <h3 class="counter" data-target="1000">0</h3>
+      <h3>1000+</h3>
       <p>Training Hours</p>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-item">
       <i class="fa-solid fa-shield-halved"></i>
-      <h3 class="counter" data-target="3">0</h3>
+      <h3>3+</h3>
       <p>Security Projects</p>
     </div>
 
-    <div class="stat-card">
+    <div class="stat-item">
       <i class="fa-solid fa-laptop-code"></i>
-      <h3 class="counter" data-target="200">0</h3>
+      <h3>200+</h3>
       <p>Labs Completed</p>
     </div>
 
