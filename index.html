@@ -771,6 +771,34 @@
     }
     
     }
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#000;
+      color:white;
+      padding-top:70px;
+    
+      background-image:
+      linear-gradient(rgba(56,189,248,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,189,248,0.08) 1px, transparent 1px);
+    
+      background-size:60px 60px;
+    
+      animation:gridMove 20s linear infinite;
+    }
+    
+    @keyframes gridMove{
+    
+      from{
+        background-position:0 0;
+      }
+    
+      to{
+        background-position:60px 60px;
+      }
+    
+    }
     
   </style>
   
@@ -789,7 +817,7 @@
 <header>
   <img src="profile.jpg" alt="Ehab Ayman Profile Photo" class="profile-img">
   <h1>Ehab Ayman Anwar</h1>
-  <h2>Junior Cybersecurity Engineer</h2>
+  <h2 id="typing"></h2>
   <p>Digital Forensics & Network Security</p>
 </header>
 
@@ -1320,6 +1348,48 @@ const observer = new IntersectionObserver(entries => {
 
 observer.observe(stats);
 </script>
+
+
+<script>
+
+const textArray = [
+"Junior Cybersecurity Engineer",
+"SOC Analyst",
+"Digital Forensics Enthusiast",
+"Network Security Specialist"
+];
+
+let index = 0;
+let charIndex = 0;
+
+function typeEffect(){
+
+  const currentText = textArray[index];
+
+  document.getElementById("typing").textContent =
+  currentText.substring(0,charIndex);
+
+  charIndex++;
+
+  if(charIndex <= currentText.length){
+
+    setTimeout(typeEffect,60);
+
+  }else{
+
+    setTimeout(()=>{
+      charIndex = 0;
+      index = (index + 1) % textArray.length;
+      typeEffect();
+    },1500)
+
+  }
+
+}
+
+typeEffect();
+
+</script>  
   
 </body>
 </html>
