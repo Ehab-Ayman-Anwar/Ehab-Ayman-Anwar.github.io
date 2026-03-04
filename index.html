@@ -713,6 +713,51 @@
       color: #00ff95;
     }
 
+    #stats{
+      padding:70px 20px;
+      text-align:center;
+    }
+    
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+    
+    .stat-card{
+      background:rgba(56,189,248,0.05);
+      border:1px solid rgba(56,189,248,0.4);
+      padding:35px 20px;
+      border-radius:15px;
+      transition:0.3s ease;
+      backdrop-filter:blur(6px);
+    }
+    
+    .stat-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 0 25px rgba(56,189,248,0.4);
+      border-color:#38bdf8;
+    }
+    
+    .stat-card i{
+      font-size:32px;
+      color:#38bdf8;
+      margin-bottom:15px;
+    }
+    
+    .stat-card h3{
+      font-size:42px;
+      margin:10px 0;
+      color:#38bdf8;
+    }
+    
+    .stat-card p{
+      font-size:13px;
+      letter-spacing:2px;
+      color:#9ca3af;
+    }
+    
   </style>
   
 </head>
@@ -734,6 +779,39 @@
   <p>Digital Forensics & Network Security</p>
 </header>
 
+<section id="stats">
+
+  <h2>Achievements</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <i class="fa-solid fa-certificate"></i>
+      <h3 class="counter" data-target="10">0</h3>
+      <p>Certifications</p>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-solid fa-clock"></i>
+      <h3 class="counter" data-target="1000+">0</h3>
+      <p>Training Hours</p>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-solid fa-shield-halved"></i>
+      <h3 class="counter" data-target="3">0</h3>
+      <p>Security Projects</p>
+    </div>
+
+    <div class="stat-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3 class="counter" data-target="200">0</h3>
+      <p>Labs Completed</p>
+    </div>
+
+  </div>
+</section>  
+  
 <section id="about">
   <h2>About Me</h2>
   <p>
@@ -1056,7 +1134,7 @@
 
   </div>
 </section>
-
+  
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-container">
@@ -1178,6 +1256,51 @@ function copyText(elementId) {
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="modalImage">
 </div>
+
+<script>
+const counters = document.querySelectorAll(".counter");
+const speed = 200;
+
+const startCounters = () => {
+
+  counters.forEach(counter => {
+
+    const updateCount = () => {
+
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText;
+
+      const increment = target / speed;
+
+      if(count < target){
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount,15);
+      } 
+      else{
+        counter.innerText = target + "+";
+      }
+
+    };
+
+    updateCount();
+
+  });
+
+};
+
+let statsSection = document.querySelector("#stats");
+
+let observer = new IntersectionObserver(entries => {
+
+  if(entries[0].isIntersecting){
+    startCounters();
+    observer.disconnect();
+  }
+
+});
+
+observer.observe(statsSection);
+</script>  
   
 </body>
 </html>
