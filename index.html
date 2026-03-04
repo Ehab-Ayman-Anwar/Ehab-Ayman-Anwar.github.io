@@ -728,6 +728,13 @@
       padding:40px 20px;
       margin-top:40px;
       flex-wrap:wrap;
+      transition:0.3s;
+    }
+
+    .stats-container:hover{
+
+      box-shadow:0 0 35px rgba(56,189,248,0.6);
+    
     }
     
     .stat-item{
@@ -1260,49 +1267,56 @@ function copyText(elementId) {
 </div>
 
 <script>
-const counters = document.querySelectorAll(".counter");
+const counters = document.querySelectorAll(".stat-item h3");
 const speed = 200;
 
-const startCounters = () => {
+function startCounter(){
 
   counters.forEach(counter => {
 
-    const updateCount = () => {
+    const target = +counter.innerText.replace("+","");
+    const update = () => {
 
-      const target = +counter.getAttribute("data-target");
-      const count = +counter.innerText;
+      const count = +counter.innerText.replace("+","");
 
       const increment = target / speed;
 
       if(count < target){
-        counter.innerText = Math.ceil(count + increment);
-        setTimeout(updateCount,15);
-      } 
-      else{
+
+        counter.innerText = Math.ceil(count + increment) + "+";
+
+        setTimeout(update,15);
+
+      } else {
+
         counter.innerText = target + "+";
+
       }
 
     };
 
-    updateCount();
+    update();
 
   });
 
-};
+}
 
-let statsSection = document.querySelector("#stats");
+let stats = document.querySelector("#stats");
 
 let observer = new IntersectionObserver(entries => {
 
   if(entries[0].isIntersecting){
-    startCounters();
+
+    startCounter();
+
     observer.disconnect();
+
   }
 
 });
 
-observer.observe(statsSection);
-</script>  
+observer.observe(stats);
+</script>
   
 </body>
 </html>
